@@ -1,16 +1,11 @@
 # barbearia_projeto
 
-A new Flutter project.
+Projeto de aplicativo em Flutter para uma barbearia
 
-## Getting Started
+## V1
 
-This project is a starting point for a Flutter application.
+Telas Home, Screen 1, Screen 2 e menu Drawer criados com imagens inseridas.
 
-A few resources to get you started if this is your first Flutter project:
+## V1.1
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Atualização de telas com Flare inserido e formulário de cadastro de Cliente.

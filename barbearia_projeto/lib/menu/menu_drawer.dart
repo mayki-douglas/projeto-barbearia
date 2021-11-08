@@ -3,8 +3,9 @@
 import 'dart:io';
 
 import 'package:barbearia_projeto/constant.dart';
-import 'package:barbearia_projeto/views/screen_1.dart';
+import 'package:barbearia_projeto/menu/screen_4.dart';
 import 'package:barbearia_projeto/views/views.dart';
+import 'package:barbearia_projeto/menu/screen_5.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -74,19 +75,19 @@ class MenuDrawer extends StatelessWidget {
             }
           ),
           _createDrawerItem(
-            icon: Icons.list,
-            text: Constant.MENU_SCREEN_1,
+            icon: Icons.attach_money,
+            text: Constant.MENU_SCREEN_4,
             onTap: (){
               Navigator.of(context).pop();
-              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Screen1()));
+              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Screen4()));
             }
           ),
           _createDrawerItem(
-            icon: Icons.list,
-            text: Constant.MENU_SCREEN_2,
+            icon: Icons.business_rounded,
+            text: Constant.MENU_SCREEN_5,
             onTap: (){
               Navigator.of(context).pop();
-              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Screen2()));
+              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Screen5()));
             }
           ),
           Divider(),

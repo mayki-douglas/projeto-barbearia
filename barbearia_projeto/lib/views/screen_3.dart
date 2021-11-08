@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_final_fields, use_key_in_widget_constructors, avoid_print
 
+import 'package:barbearia_projeto/constant.dart';
+import 'package:barbearia_projeto/views/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rive/rive.dart';
+
 
 class Screen3 extends StatefulWidget {
   @override
@@ -15,41 +17,65 @@ class _Screen3State extends State<Screen3> {
   TextEditingController _adressController = TextEditingController();
   TextEditingController _numberController = TextEditingController();
 
-  _rowFlare() {
-    return SizedBox(
-      child: RiveAnimation.asset('images/pencil.riv'),
-      width: 75,
-      height: 75,
-    );
-  }
+  // ignore: non_constant_identifier_names
 
-  _rowName() {
-    // ignore: unnecessary_new
-    return new TextFormField(
-      controller: _nameController,
-      keyboardType: TextInputType.text,
-      decoration: InputDecoration(hintText: "Digite o seu nome"),
-      maxLength: 100,
-    );
-  }
-
-  _rowAddress() {
-    return TextFormField(
-      controller: _adressController,
-      keyboardType: TextInputType.text,
-      decoration: InputDecoration(hintText: "Digite seu Endereço"),
-      maxLength: 100,
-    );
-  }
-
-  _rowNumber() {
-    return TextFormField(
-      controller: _numberController,
-      keyboardType: TextInputType.number,
-      decoration: InputDecoration(
-        hintText: "Digite seu Número de celular",
+  _rowName(){
+    return Padding(
+      padding: const EdgeInsets.all(2.0),
+      child: TextFormField(
+        controller: _nameController,
+        keyboardType: TextInputType.text,
+        decoration: InputDecoration(
+          labelText: "Digite Seu Nome", border: OutlineInputBorder()
+        ),
+        maxLength: 100,
+        validator: (value){
+          if (value!.isEmpty){
+            return "Preencha seu nome Corretamente";
+          }
+          return null;
+        },
       ),
-      maxLength: 12,
+    );
+  }
+
+  _rowAdress(){
+    return Padding(
+      padding: const EdgeInsets.all(2.0),
+      child: TextFormField(
+        controller: _adressController,
+        keyboardType: TextInputType.text,
+        decoration: InputDecoration(
+          labelText: "Digite seu Endereço", border: OutlineInputBorder()
+        ),
+        maxLength: 100,
+        validator: (value){
+          if (value!.isEmpty){
+            return "Preencha seu Endereço Corretamente";
+          }
+          return null;
+        }
+      ),
+    );
+  }
+
+  _rowNumber(){
+    return Padding(
+      padding: const EdgeInsets.all(2.0),
+      child: TextFormField(
+        controller: _numberController,
+        keyboardType: TextInputType.number,
+        decoration: InputDecoration(
+          labelText: "Digite seu Celular", border: OutlineInputBorder()
+        ),
+        maxLength: 12,
+        validator: (value){
+          if (value!.isEmpty){
+            return "Preencha seu Celular";
+          }
+          return null;
+        }
+      ),
     );
   }
 
@@ -57,6 +83,7 @@ class _Screen3State extends State<Screen3> {
     return TextButton.icon(
       onPressed: () {
         _register();
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Home(Constant.MENU_HOME)));
       },
       label: Text('Cadastrar'),
       icon: Icon(Icons.check),
@@ -66,9 +93,8 @@ class _Screen3State extends State<Screen3> {
   _formUI() {
     return Column(
       children: [
-        _rowFlare(),
         _rowName(),
-        _rowAddress(),
+        _rowAdress(),
         _rowNumber(),
         _rowButton(),
       ],
@@ -89,11 +115,11 @@ class _Screen3State extends State<Screen3> {
         title: Text('Cadastre-se'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         // ignore: prefer_const_literals_to_create_immutables
         children: <Widget>[
           _rowForm(),
-        ],
+        ]
       ),
     );
   }

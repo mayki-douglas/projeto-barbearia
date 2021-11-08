@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          widget.title,
+          "Barbearia Projeto",
           textAlign: TextAlign.center,
         ),
       ),
@@ -30,13 +30,13 @@ class _HomeState extends State<Home> {
       body: Column(
         children: [
           Image.asset(
-            'images/barbea.jpg', height: 300, width: 300,
+            'images/barbea.jpg', height: 225, width: 225,
           ),
           Center(
             child: Text("A Barbearia que vc entra feio e sai horroroso"),
           ),
           TextButton.icon(
-            icon: Icon(Icons.add),
+            icon: Icon(Icons.access_alarm),
             label: Text('Clique para agendar seu horário'),
             onPressed: () {
               Navigator.push(
@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
             },
           ),
           TextButton.icon(
-            icon: Icon(Icons.add),
+            icon: Icon(Icons.access_time),
             label: Text('Clique para ver os horários disponíveis'),
             onPressed: () {
               Navigator.push(

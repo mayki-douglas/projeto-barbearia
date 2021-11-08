@@ -16,7 +16,7 @@ class _AboutState extends State<About> {
       body: Column(
         children: [
           Center(
-            child: Text("desenvolvido por Rafael Santini e Mayki Douglas"),
+            child: Text("desenvolvido por Rafael Santini e Mayki Douglas\nVersão 1.2 11/2021"),
           ),
         ],
       ),
